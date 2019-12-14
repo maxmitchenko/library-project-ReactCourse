@@ -1,2 +1,1 @@
-# book-catalogue-MERN
- my first MERN project
+# Final project for React courses
