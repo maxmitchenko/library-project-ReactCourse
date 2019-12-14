@@ -2,18 +2,8 @@ import React, { Component } from 'react'
 import ReactTable from 'react-table'
 import api from '../api'
 
-import styled from 'styled-components'
-
+import 'bootstrap/dist/css/bootstrap.min.css'
 import 'react-table/react-table.css'
-
-const Wrapper = styled.div`
-    padding: 0 40px 40px 40px;
-`
-
-const Delete = styled.div`
-    color: #ff0000;
-    cursor: pointer;
-    `
 
     class DeleteBook extends Component {
         deleteBook = event => {
@@ -21,7 +11,7 @@ const Delete = styled.div`
     
             if (
                 window.confirm(
-                    `Do you want to delete the book ${this.props.id} permanently?`,
+                    `Do you want to delete the book ${this.props.title} permanently?`,
                 )
             ) {
                 api.deleteBookById(this.props.id)
@@ -30,7 +20,7 @@ const Delete = styled.div`
         }
     
         render() {
-            return <Delete onClick={this.deleteBook}>Delete</Delete>
+            return <button className='btn btn-danger' onClick={this.deleteBook}>Delete</button>
         }
     }
     
@@ -75,7 +65,12 @@ class BooksList extends Component {
                 Header: 'Author',
                 accessor: 'author',
                 filterable: true,
-            },            
+            },
+            {
+                Header: 'Student',
+                accessor: '_student',
+                filterable: true,
+            },             
             {
                 Header: '',
                 accessor: '',
@@ -95,7 +90,7 @@ class BooksList extends Component {
         }
 
         return (
-            <Wrapper>
+            <div>
                 {showTable && (
                     <ReactTable
                         data={books}
@@ -106,7 +101,7 @@ class BooksList extends Component {
                         minRows={0}
                     />
                 )}
-            </Wrapper>
+            </div>
         )
     }
 }

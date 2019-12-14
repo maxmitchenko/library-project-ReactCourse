@@ -33,6 +33,16 @@ class Links extends Component {
                                 Create a Book
                             </Link>
                         </Item>
+                        <Item>
+                            <Link to="/" className="nav-link">
+                                Add a User
+                            </Link>
+                        </Item>
+                        <Item>
+                            <Link to="/" className="nav-link">
+                                Show all Users
+                            </Link>
+                        </Item>
                     </List>
                 </Collapse>
             </React.Fragment>
