@@ -2,7 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const db = require('./db')
-const bookRouter = require('./routes/book-router')
+const bookRouter = require('./routes/routers')
 const app = express()
 const apiPort = 8000
 

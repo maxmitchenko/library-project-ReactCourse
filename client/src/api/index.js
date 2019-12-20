@@ -4,7 +4,7 @@ const api = axios.create({
     baseURL: 'http://localhost:8000/api',
 })
 
-export const getOwnerById = (id) => api.get(`/owner/${id}`)
+export const getOwnerByLogin = (id, payload) => api.get(`/owner/${id}`, payload)
 
 export const insertBook = payload => api.post(`/book`, payload)
 export const getAllBooks = () => api.get(`/books`)
@@ -13,7 +13,7 @@ export const deleteBookById = id => api.delete(`/book/${id}`)
 export const getBookById = id => api.get(`/book/${id}`)
 
 const apis = {
-    getOwnerById,
+    getOwnerByLogin,
     insertBook,
     getAllBooks,
     updateBookById,

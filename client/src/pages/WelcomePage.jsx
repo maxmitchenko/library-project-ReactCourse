@@ -27,7 +27,7 @@ handleAccessChecking = async(event) => {
     event.preventDefault()
     const {login, password} = this.state
     const payload = {login, password}
-    await apis.getOwnerById(payload).then(res => {
+    await apis.getOwnerByLogin(payload).then(res => {
         window.alert(`Owner is OK!`)
             this.setState({
                 login: '',
