@@ -23,7 +23,7 @@ class WelcomePage extends React.Component {
         this.setState({ password })
     }
 
-handleAccessChechecking = async(event) => {
+handleAccessChecking = async(event) => {
     event.preventDefault()
     const {login, password} = this.state
     const payload = {login, password}
@@ -49,7 +49,7 @@ handleAccessChechecking = async(event) => {
                 <div className="row">
                     <div className="col-md-3"></div>
                     <div className="col-md-6">
-                        <form action='signin' className='demoForm'>
+                        <form className='demoForm' onSubmit ={this.handleAccessChecking}>
                             <h3 className='mt-4 mb-3'>Sign in:</h3>
                             <div className='form-group'>
                                 <label htmlFor='login'></label>
@@ -64,7 +64,7 @@ handleAccessChechecking = async(event) => {
                                     onChange={this.handleChangeInputPassword} />
                             </div>
                             <button type='submit' className='btn btn-primary mb-2'>
-                                Sign up
+                                Sign in
                             </button>
                         </form>
                     </div>
